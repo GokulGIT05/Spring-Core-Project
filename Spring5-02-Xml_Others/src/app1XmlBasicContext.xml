@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Singleton Scope -->
+	<bean id="cricketBean" class="com.gk3.implClasses.CricketImpl">
+	<property name="theFortuneService" ref="fortuneBean"></property>
+	</bean>
+	
+	<!-- Prototype Scope -->
+	<bean id="fortuneBean" class="com.gk3.implClasses.FortuneServiceImpl" scope="prototype">
+	</bean>
+	
+	<!-- Life Cycle Demo -->
+	<bean id="tennisBean" class="com.gk3.implClasses.TennisLifeCycleImpl" init-method="initMethodDemo" destroy-method="destroyMethodDemo">
+	<property name="theFortuneService" ref="fortuneBean"></property>
+	</bean>
+	
+	<!-- Constructor Injection -->
+	<bean id="swimBean" class= "com.gk3.implClasses.SwimInjectionImpl">
+	<constructor-arg ref="fortuneBean"></constructor-arg>
+	</bean>
+	
+	<!--  Literal Injection using setter
+	<bean id="literalInjTest" class="com.gk3.implClasses.LiteralInjectionTest">
+	<property name="empName" value="Gokul G"></property>
+	<property name="age" value="27"></property>
+	</bean> -->
+	
+	<!-- Constructor injection with two arguments -->
+	<bean id="literalInjTest" class="com.gk3.implClasses.LiteralInjectionTest">
+	<constructor-arg name="empName" value="Gokul G"></constructor-arg>
+	<constructor-arg name="age" value="27"></constructor-arg>
+	</bean>
+	
+	<!--  Literals Injections Using Properties files -->
+	<context:property-placeholder location="classpath:literal.properties"/>
+	
+	<bean id="literalsUsingPropertyFile" class="com.gk3.implClasses.LiteralInjUsingProperties">
+	<property name="empName" value="${name}"></property>
+	<property name="age" value="${age}"></property>
+	</bean>
+	
+</beans>
+
