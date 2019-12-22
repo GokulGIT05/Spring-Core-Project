@@ -24,7 +24,7 @@ public class TennisCoach {
 	
 	@Autowired
 	@Qualifier("dailyFS")
-	public FortuneService theFortuneService;  // For Auto wired no need of getter and setter.
+	public FortuneService theFortuneService;  // For Auto-wired no need of getter and setter.
 	
 	// Getters and Setters:
 	public String getWorkOuts() {

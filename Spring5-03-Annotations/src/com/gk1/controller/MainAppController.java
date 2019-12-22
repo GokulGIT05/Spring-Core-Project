@@ -27,7 +27,8 @@ public class MainAppController {
 		System.out.println("-------------------------------------------------------");
 		
 		FortuneService theFortune = context.getBean("dailyFortuneServiceImpl",DailyFortuneServiceImpl.class);
-		FortuneService theFortune1 = context.getBean("dailyFortuneServiceImpl",DailyFortuneServiceImpl.class);
+		FortuneService theFortune1 = context.getBean("dailyFortune"
+				+ "ServiceImpl",DailyFortuneServiceImpl.class);
 		System.out.println("PROTOTYPE:");
 		System.out.println("DailyFortuneServiceImpl: "+theFortune);
 		System.out.println("DailyFortuneServiceImpl: "+theFortune1);

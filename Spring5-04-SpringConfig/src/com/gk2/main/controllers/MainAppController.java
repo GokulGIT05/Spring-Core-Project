@@ -25,7 +25,7 @@ public class MainAppController {
 		
 		// Without ComponentScan
 		AnnotationConfigApplicationContext contextWOScan = new AnnotationConfigApplicationContext(SpringWithoutScanConfig.class);
-		SwimCoach theSwim = contextWOScan.getBean("swimCoach",SwimCoach.class);
+		SwimCoach theSwim = (SwimCoach) contextWOScan.getBean("swimBeanCoach");
 		System.out.println("IOC: "+theSwim.getWorkOuts());
 		System.out.println("DI: "+theSwim.getFortuneDI());
 		contextWOScan.close();

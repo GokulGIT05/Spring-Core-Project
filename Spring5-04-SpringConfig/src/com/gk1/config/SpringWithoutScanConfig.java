@@ -1,5 +1,6 @@
 package com.gk1.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,7 +14,8 @@ import com.gk4.interfaces.FortuneService;
 public class SpringWithoutScanConfig {
 
 	@Bean
-	public SwimCoach swimCoach() {
+// 	@Qualifier("SwimCoachBean") // This Qualifier wont work, only method names
+	public SwimCoach swimBeanCoach() { // Bean names are method Name
 		return new SwimCoach();
 	}
 	

@@ -12,6 +12,7 @@
 	</bean>
 	
 	<bean id="fortuneBean" class="com.gk3.implClasses.FortuneServiceImpl"></bean>
+	
 </beans>
 
 
