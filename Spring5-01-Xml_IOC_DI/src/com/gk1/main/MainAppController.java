@@ -17,5 +17,6 @@ public class MainAppController {
 		System.out.println("Using Spring DI: " + theCoach.getFortuneService());
 
 		context.close();
+		
 	}
 }
